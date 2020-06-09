@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskApp", "TaskApp\TaskApp.csproj", "{22EE251D-FB4A-4CFE-809F-E78DEE17876D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22EE251D-FB4A-4CFE-809F-E78DEE17876D}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{22EE251D-FB4A-4CFE-809F-E78DEE17876D}.Debug|anycpu.Build.0 = Debug|anycpu
+		{22EE251D-FB4A-4CFE-809F-E78DEE17876D}.Release|anycpu.ActiveCfg = Release|anycpu
+		{22EE251D-FB4A-4CFE-809F-E78DEE17876D}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
