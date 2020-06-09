@@ -3,31 +3,15 @@ namespace TaskApp
 {
     public struct Task
     {
-        private string[] tasks;
-        private string task;
-        private string timeCreated;
-        private string timeDue;
+        string taskName;
+        private DateTime timeCreated;
+        private DateTime timeDue;
 
         public Task(string taskName)
         {
-            tasks = new string[] { };
-            task = taskName;
-            timeCreated = DateTime.Now.Date.ToShortDateString();
-            timeDue = DateTime.Now.Date.ToShortDateString();
+            this.taskName = taskName;
+            timeCreated = DateTime.Now;
+            timeDue = DateTime.Now;
         }
-
-        public Task (string taskName, DateTime dueDate)
-        {
-            tasks = new string[] { };
-            task = taskName;
-            timeCreated = DateTime.Now.Date.ToShortDateString();
-            timeDue = dueDate.ToShortDateString();
-        }
-
-        public void PrintTask()
-        {
-
-        }
-
     }
 }
