@@ -41,9 +41,7 @@ namespace TaskApp
                     default:
                         return;
                 }
-            }
-            
-            
+            }  
         }
 
         static public void PrintWelcome()
