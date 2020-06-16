@@ -3,8 +3,8 @@ namespace TaskApp
 {
     public struct Task
     {
-        string taskName;
-        private DateTime timeCreated;
+        public string taskName;
+        public DateTime timeCreated;
         private DateTime timeDue;
 
         public Task(string taskName)
