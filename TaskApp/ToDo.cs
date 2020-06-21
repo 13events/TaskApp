@@ -12,10 +12,16 @@ namespace TaskApp
             tasks = new List<Task> { };
         }
 
-        public void AddTask(string taskName)
+        public bool AddTask(string taskName)
         {
             Task newTask = new Task(taskName);
-            tasks.Add(newTask);
+
+            if (!tasks.Contains(newTask))
+            {
+                tasks.Add(newTask);
+                return true;
+            }
+            throw new Exception("Duplicate tasks are not allowed.");
         }
 
         public bool isEmpty()
@@ -35,6 +41,7 @@ namespace TaskApp
                     Console.WriteLine(formattedString);
                   
                 }
+
             } else
             {
                 Console.WriteLine("You don't have anything on your list!");
