@@ -5,15 +5,16 @@ namespace TaskApp
 {
     class MainClass
     {
-        
-   
+         static private ToDo taskList = new ToDo();
 
         public static void Main(string[] args)
         {
-            Task taskList = new Task();
-
             string userName = Environment.UserName;
             string userSelection = string.Empty;
+
+            SetConsoleColors();
+
+          
 
             PrintWelcome();
 
@@ -27,15 +28,19 @@ namespace TaskApp
                 switch (userSelection.ToLower())
                 {
                     case "1":
-                        Console.WriteLine("Show task list. \n");
+                        Console.Clear();
+                        taskList.PrintTasks();
                         break;
                     case "2":
-                        Console.WriteLine("Add a new task. \n");
+                        Console.Clear();
+                        PromptUserToAddTask();
                         break;
                     case "3":
-                        Console.WriteLine("Mark a task as completed. \n");
+                        Console.Clear();
+                        PromptUserToRemoveTask();
                         break;
                     case "q":
+                        Console.Clear();
                         Console.WriteLine("Quitting application... \n");
                         break;
                     default:
@@ -47,18 +52,54 @@ namespace TaskApp
         static public void PrintWelcome()
         {
             Console.WriteLine("********** Welcome to the TaskApp **********");
-            Console.WriteLine("Make your selection using the menu below.\n");
+            
         }
 
         static public void PrintMenu()
         {
+            Console.WriteLine("Make your selection using the menu below.\n");
             Console.WriteLine("1) Show Task List");
             Console.WriteLine("2) Add a new Task");
             Console.WriteLine("3) Mark a task as completed");
         }
 
-        private void AddTask(string taskName)
+        static public void SetConsoleColors()
         {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.Clear();
         }
+
+        static private bool PromptUserToAddTask()
+        {
+            string taskName = string.Empty;
+
+            Console.Write("Enter task: ");
+            taskName = Console.ReadLine();
+
+            try
+            {
+                return taskList.AddTask(taskName);
+
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+        static private bool PromptUserToRemoveTask()
+        {
+            string indexOfTaskToRemove;
+
+            Console.Write("Enter task number to mark as completed: ");
+            indexOfTaskToRemove = Console.ReadLine();
+
+            return taskList.RemoveTaskAt(int.Parse(indexOfTaskToRemove));
+
+        }
+        
+        
     }
 }
