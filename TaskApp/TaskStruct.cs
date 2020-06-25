@@ -1,6 +1,8 @@
 ﻿using System;
 namespace TaskApp
 {
+    //TODO: Add field for DueBy Date.
+
     public struct Task : IEquatable<Task>
     {
         public string taskName;
