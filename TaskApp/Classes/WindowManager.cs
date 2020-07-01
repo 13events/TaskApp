@@ -38,14 +38,15 @@ namespace TaskApp {
 
             if (UNIX)
             {
+                //resize window and set position
                 system($"printf '\\e[8;%i;%it' {windowHeight} {windowWidth}");
                 system($"printf '\\e[3;0;0t'");
             } else
             {
-                //resize window and move to position
+                //resize window
                 Console.WindowHeight = height;
                 Console.WindowWidth = width;
-                Console.SetWindowPosition(0, 0);
+                
             }
         }
 
