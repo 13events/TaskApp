@@ -43,6 +43,7 @@
     <Compile Include="Structs\TaskStruct.cs" />
     <Compile Include="Classes\ToDo.cs" />
     <Compile Include="Tests\ToDoClassTest.cs" />
+    <Compile Include="Classes\WindowManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\packages.config" />
