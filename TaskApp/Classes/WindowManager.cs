@@ -19,8 +19,10 @@ namespace TaskApp {
         /// </summary>
         /// <param name="height">height of window, in characters</param>
         /// <param name="width">width of window, in characters</param>
-        public WindowManager(int height, int width)
+        public WindowManager(int height, int width):this()
         {
+            ////set UNIX flag
+            //UNIX = Environment.OSVersion.Platform.ToString() == "Unix" ? true : false;
             windowHeight = height;
             windowWidth = width;
             SetWindowSize(windowHeight, windowWidth);
